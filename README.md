@@ -37,9 +37,6 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
 ```
-from django.shortcuts import render,HttpResponse
-from http.server import HTTPServer,BaseHTTPRequestHandler
-content='''
 <!DOCTYPE html>
 <html lang="en">
 <head>
