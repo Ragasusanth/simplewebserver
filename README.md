@@ -38,7 +38,7 @@ Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 ## PROGRAM:
 ```
 <html>
-<head> <title>my first page</title>
+<head> <title>WEB EX 01</title>
 </head
 <Body>
 <table align="center" border="1" bgcolour="cyan" cellpadding="10">
