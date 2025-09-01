@@ -1,0 +1,31 @@
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+content = '''
+<html>
+<head> <title>WEB EX 01</title>
+</head
+<Body>
+<table align="center" border="1" bgcolour="cyan" cellpadding="10">
+<caption>LIST OF PROTOCOLS IN TCP/LP PROTOCOL</caption>
+<tr><th>S.NO</th><th>NAME OF THE LAYERS</th><th>NAME OF THE PROTOCOLS</th></tr>
+<tr><th>1</th><th>Application layers</th><th>HTTP,FTP,DNS,TALENT,SSH</th></tr>
+<tr><th>2</th><th>Transport Layers</th><th>TCP/UDP</th></tr>
+<tr><th>3</th><th>Network Layers</th><th>IPV4/IPV6</th></tr>
+<tr><th>4</th><th>Link Layers</th><th>ETHERNET</th></tr>
+</table>
+</Body>
+</html>
+'''
+
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
